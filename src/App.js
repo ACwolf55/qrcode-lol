@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
 
 function App() {
+
+  const [messageBody,setMessageBody] = useState('')
+  const [email,setEmail] = useState('')
+
+  const sendReferal =()=>{
+    axios.post('/emailReferal',{messageBody,email}).then((res)=>{
+      console.log(res.data)
+      alert(`referral sent to ${friendEmail}!`)
+    })
+  }
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <img src='/QRcode_logo.jpg'></img> 
+    <h1>QRcode.lol</h1>
+    <h4> qrcode creation company</h4>
       </header>
+
+
+    <main>
+      
+    <p>Email </p>
+    <input onChange={(e)=>setFriendEmail(e.target.value)} placeholder='email'></input>
+    <button onClick={sendReferal} >Send</button>
+
+
+
+    </main>
+
     </div>
   );
 }
