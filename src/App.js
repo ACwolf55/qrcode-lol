@@ -1,17 +1,18 @@
 import React,{useState} from 'react';
 import './App.css';
+import axios from 'axios';
 
 function App() {
 
   const [messageBody,setMessageBody] = useState('')
   const [email,setEmail] = useState('')
 
-  const sendReferal =()=>{
-    axios.post('/emailReferal',{messageBody,email}).then((res)=>{
-      console.log(res.data)
-      alert(`referral sent to ${friendEmail}!`)
-    })
-  }
+  // const sendReferal =()=>{
+  //   axios.post('/emailReferal',{messageBody,email}).then((res)=>{
+  //     console.log(res.data)
+  //     alert(`referral sent to ${friendEmail}!`)
+  //   })
+  // }
 
 
   return (
@@ -24,7 +25,7 @@ function App() {
 
 
     <main>
-      
+
     <p>Email </p>
     <input onChange={(e)=>setFriendEmail(e.target.value)} placeholder='email'></input>
     <button onClick={sendReferal} >Send</button>
