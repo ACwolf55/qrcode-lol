@@ -3,7 +3,8 @@ const app = express()
 const cors = require('cors')
 const path =require('path')
 require("dotenv").config(); 
-const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer');
+const { measureMemory } = require('vm');
 
 const {PORT} = process.env
 
@@ -15,15 +16,15 @@ app.use(express.static(path.resolve(`${__dirname}/../build`)))
 
 
 
-app.post('/emailReferal',async (req,res)=>{
+app.post('/sendMessage',async (req,res)=>{
     
-    const {friendEmail,email} = req.body
-    console.log(friendEmail)
+    const {messageBody,email} = req.body
+    console.log(messageBody)
     const mailOptions={
         from:'alexcwolf5@gmail.com',
-        to:friendEmail,
-        subject: 'You Have Been Referred!',
-        text: ` YOU HAVE BEEN REFERRED! ${email} would like to share 1800-Plumber with you!`
+        to:'alexcwolf5@gmail.com',
+        subject: 'QRcode.lol email message',
+        text: ` ${messageBody} ~~ --> from: ${email}`
     }
     // pass:zjiunqmadmruutxo
     const transport = await nodemailer.createTransport({
@@ -51,8 +52,8 @@ app.post('/emailReferal',async (req,res)=>{
             console.log(error)
             return res.status(400).send('error')
         }else{
-            console.log('email sent') + info.response
-        return res.status(200).send('email sent')
+            console.log('message sent') + info.response
+        return res.status(200).send('message sent sent')
     }
 })
 
