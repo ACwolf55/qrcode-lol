@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-    <img src='/QRcode_logo.jpg'></img> 
+    <img src='/QRcode_logo.jpg' className='qr-logo'></img> 
     <h1>QRcode.lol</h1>
     <h4> qrcode creation company</h4>
       </header>
