@@ -19,6 +19,7 @@ function App() {
       alert(` sent !`)
       
     }).catch((err)=> alert(err.response.request.response))
+
   }
 
 
@@ -26,7 +27,7 @@ function App() {
     <div className="App">
       <header className="App-header">
     <img src='/QRcode_logo.jpg' className='qr-logo'></img> 
-    <h1>QRcode.lol</h1>
+    <h1>QRcodes.lol</h1>
       </header>
 
     <h4> qrcode creation company</h4>
@@ -37,12 +38,12 @@ function App() {
     <br/>
     <h4>Email</h4>
     <div style={{ display:'flex', flexDirection:'row', alignItems:'center',justifyContent:'center'}}>
-    <input onChange={(e)=>{setEmail(e.target.value)}}></input>
+    <input onChange={(e)=>{setEmail(e.target.value)}} value={email}></input>
 </div>  
 
     <h4>Message</h4>
    <div style={{ display:'flex', flexDirection:'row', alignItems:'center',justifyContent:'center'}}>
-        <textarea onChange={(e)=>setMessageBody(e.target.value)} style={{height:'200px',width:'700px'}}></textarea>
+        <textarea onChange={(e)=>setMessageBody(e.target.value)} style={{height:'200px',width:'700px'}} value={messageBody}></textarea>
         </div>
 
       <button onClick={sendMessage}>Send</button>
