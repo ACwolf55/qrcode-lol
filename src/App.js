@@ -27,8 +27,8 @@ function App() {
     <main>
 
     <p>Email </p>
-    <input onChange={(e)=>setFriendEmail(e.target.value)} placeholder='email'></input>
-    <button onClick={sendReferal} >Send</button>
+    {/* <input onChange={(e)=>setFriendEmail(e.target.value)} placeholder='email'></input>
+    <button onClick={sendReferal} >Send</button> */}
 
 
 
