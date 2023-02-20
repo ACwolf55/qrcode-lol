@@ -43,7 +43,7 @@ function App() {
 
     <h4>Message</h4>
    <div style={{ display:'flex', flexDirection:'row', alignItems:'center',justifyContent:'center'}}>
-        <textarea onChange={(e)=>setMessageBody(e.target.value)} style={{height:'200px',width:'700px'}} value={messageBody}></textarea>
+        <textarea onChange={(e)=>setMessageBody(e.target.value)} className='input-area' value={messageBody}></textarea>
         </div>
 
       <button onClick={sendMessage}>Send</button>
