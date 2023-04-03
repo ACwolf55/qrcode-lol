@@ -8,6 +8,9 @@ function App() {
   const [email,setEmail] = useState('')
 
   useEffect(()=>{
+    axios.put(`/traffic-counter/QRcode`).then((res)=>{
+      
+    })
 
   },[])
 
